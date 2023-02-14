@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.static("public"));
 
 const noteRoutes = require("./controllers/noteController")
-app.use("/notes", noteRoutes)
+app.use("/", noteRoutes)
 
 app.get("/notes", (req, res) => {
     res.sendFile(path.join(__dirname, "./public/notes.html"))
